@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 09</title>
+
+    <!--dit script werkt met variabelen
+    auteur:
+    datum: 
+    -->
+
+</head>
+
+<body>
+    <script>
+        var rol = prompt('Rol: ');
+            var inlogcode = prompt('Inlogcode: ');
+            switch (rol) {
+                case 'student':
+                    switch (inlogcode) {
+                        case 'student':
+                            document.write('welkom Student!');
+                        break;
+                        default:
+                            alert('Inlogcode Ongeldig');
+                        break;
+                    }
+                break;                  
+                case 'admin':
+                    switch (inlogcode) {
+                        case 'admin':
+                            document.write('welkom Admin!');
+                        break;
+                        default:
+                            alert('Inlogcode Ongeldig');
+                        break;
+                    }
+                break;
+                default:
+                   alert('Rol Ongeldig!');
+                break;
+            }
+    </script>
+</body>
+
+</html>

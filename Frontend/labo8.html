@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 08</title>
+
+    <!--dit script werkt met variabelen
+    auteur:
+    datum: 
+    -->
+
+</head>
+
+<body>
+    <h2>Lab 08</h2>
+    <h3>Factuur</h2>
+        <script>
+
+            var maanden = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec');
+            var weekdag = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+
+            //Vandaag
+            var vandaag = new Date();
+            var n = weekdag[vandaag.getDay()];
+            var d = vandaag.getDate();
+            var m = maanden[vandaag.getMonth()];
+            var j = vandaag.getFullYear();
+
+            document.write('<br>Vandaag is: ' + n + ' ' + m + ' ' + d + ' ' + j);
+
+            //Factuurdatum
+            var factuur = new Date(prompt('Wat is de factuurdatum? JJJJ-MM-DD'));
+            var n = weekdag[factuur.getDay()];
+            var d = factuur.getDate();
+            var m = maanden[factuur.getMonth()];
+            var j = factuur.getFullYear();
+            document.write('<br>Factuurdatum is: ' + n + ' ' + m + ' ' + d + ' ' + j);
+
+            //Betaaldatum
+            var termijn = new Date(2592000000);
+            betaaltijd = new Date(factuur.getTime() + termijn.getTime());
+            betaaldatum = new Date(betaaltijd);
+            var n = weekdag[betaaldatum.getDay()];
+            var d = betaaldatum.getDate();
+            var m = maanden[betaaldatum.getMonth()];
+            var j = betaaldatum.getFullYear();
+            document.write('<br>Betaaldatum is: ' + n + ' ' + m + ' ' + d + ' ' + j);
+
+        if (vandaag > betaaldatum) {
+            alert('Meld incassobureau');
+        } else {
+            var eenDag = 86400000;
+            var DagenResterend = (betaaldatum.getTime() - vandaag.getTime()) / eenDag;
+            document.write('<br>U hebt nog ' + DagenResterend.toFixed(0) + ' resterende dagen om te betalen.');
+        }
+
+            
+        </script>
+</body>
+
+</html>

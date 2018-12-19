@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 06</title>
+
+    <!--dit script werkt met variabelen
+    auteur:
+    datum: 
+    -->
+
+</head>
+<body>
+    <h2>Lab 01</h2>
+    <h3>Factuur</h2>
+    <script>
+        var klantnaam = prompt("voer je naam in");
+        var aantal = parseInt(prompt("aantal boeken bestellen?"));
+        var titel = "Javascript";
+        var prijs = 29.90;
+        var bedrag = prijs * aantal;
+        var btw = bedrag / 100 * 6;
+        var totaal = bedrag + btw;
+        var factuur = new Date();
+        var d = factuur.getDay();
+        var m = factuur.getMonth();
+        var j = factuur.getFullYear();
+        var d2 = d + 5;
+        document.write("<br> Factuur");
+        document.write("<br> Factuurdatum: " + d + '-' + m + '-' + j);
+        document.write("<br> Betaaldatum: " + d2 + '-' + m + '-' + j);
+        document.write("<br> badankt voor uw bestelling: " + klantnaam);
+        document.write("<br> Boektitel is: " + titel);
+        document.write("<br> Aantal te bestellen: " + aantal);
+        document.write("<br> prijs per boek is: €" + prijs.toFixed(2));
+        document.write("<br> bedrag is: €" + bedrag.toFixed(2));
+        document.write("<br> BTW is: €" + btw.toFixed(2));
+        document.write("<br> Totaal inclusief BTW is: €" + totaal.toFixed(2));
+    </script>
+</body>
+</html>
